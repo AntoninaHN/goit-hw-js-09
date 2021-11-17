@@ -3,8 +3,8 @@ import 'flatpickr/dist/flatpickr.min.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const refs = {
-  boxEl: document.createElement('div'),
-  pEl: document.querySelector('p'),
+  box: document.createElement('div'),
+  p: document.querySelector('p'),
   inputDateTimePicker: document.querySelector('#datetime-picker'),
   btnStart: document.querySelector('button[data-start]'),
   timer: document.querySelector('.timer'),
@@ -17,21 +17,12 @@ const refs = {
   secondsValue: document.querySelector('span.value[data-seconds]'),
 };
 
-refs.boxEl.className = 'boxElement';
-refs.boxEl.style.height = '40vh';
+refs.box.className = 'boxElement';
+refs.box.style.height = '40vh';
 
-const btnReset = document.createElement('button');
-btnReset.className = 'resetBtn';
-btnReset.type = 'button';
-btnReset.setAttribute('data-reset', '');
-btnReset.textContent = 'Reset page';
-btnReset.style.backgroundColor = 'red';
-btnReset.style.color = 'black';
-btnReset.style.marginLeft = '40px';
-
-refs.pEl.after(refs.boxEl);
-refs.boxEl.prepend(refs.inputDateTimePicker, refs.btnStart, btnReset);
-refs.boxEl.after(refs.timer);
+refs.p.after(refs.box);
+refs.box.prepend(refs.inputDateTimePicker, refs.btnStart);
+refs.box.after(refs.timer);
 refs.btnStart.setAttribute('disabled', '');
 
 function convertToMs(ms) {
@@ -91,11 +82,6 @@ function onStart(e) {
   refs.timerId = setInterval(timerRun, 1000);
 }
 
-btnReset.addEventListener('click', onReset);
-function onReset(e) {
-  document.location.reload();
-}
-
 function timerRun(e) {
   refs.dateNowGlobal = new Date();
 
@@ -112,7 +98,7 @@ function timerRun(e) {
   refs.secondsValue.textContent = addLeadingZero(seconds);
 
   if (deltaTimeMs < 1000) {
-    Notify.success('Timer is Over! Good luck!', {
+    Notify.success('Timer is Over!', {
       clickToClose: true,
       timeout: 4000,
       position: 'center-center',
