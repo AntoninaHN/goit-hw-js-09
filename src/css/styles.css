@@ -1,0 +1,7 @@
+button {
+  border: 3px;
+  padding: 10px 20px 10px 20px;
+}
+button:not(:last-child) {
+  margin-right: 10px;
+}
