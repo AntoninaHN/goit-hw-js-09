@@ -10,15 +10,18 @@ const refs = {
   timer: document.querySelector('.timer'),
   selectedDate: 0,
   dateNowGlobal: 0,
-  timerId: '',
+  timerId: document.querySelector('#datetime-picker'),
   daysValue: document.querySelector('span.value[data-days]'),
   hoursValue: document.querySelector('span.value[data-hours]'),
   minutesValue: document.querySelector('span.value[data-minutes]'),
   secondsValue: document.querySelector('span.value[data-seconds]'),
 };
 
-refs.box.className = 'boxElement';
-refs.box.style.height = '40vh';
+// function colorationButton() {
+//   if (refs.btnStart.disabled === true) {
+//     return (refs.btnStart.style.background = 'grey');
+//   }
+// }
 
 refs.p.after(refs.box);
 refs.box.prepend(refs.inputDateTimePicker, refs.btnStart);
@@ -30,11 +33,8 @@ function convertToMs(ms) {
   const minute = second * 60;
   const hour = minute * 60;
   const day = hour * 24;
-
   const days = Math.floor(ms / day);
-
   const hours = Math.floor((ms % day) / hour);
-
   const minutes = Math.floor(((ms % day) % hour) / minute);
   const seconds = Math.floor((((ms % day) % hour) % minute) / second);
 
@@ -103,3 +103,6 @@ function timerRun(e) {
     clearInterval(refs.timerId);
   }
 }
+//UNI TIME
+// const date = new Date();
+// console.log(date.getTime());
