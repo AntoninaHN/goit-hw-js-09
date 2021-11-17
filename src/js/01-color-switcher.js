@@ -22,7 +22,6 @@ function disableStart(e) {
   refs.stop.removeAttribute('disabled');
   //seting the color immediately for the first time
   refs.timer = refs.body.style.backgroundColor = getRandomHexColor();
-
   //color changes every second
   refs.timer = setInterval(() => {
     refs.body.style.backgroundColor = getRandomHexColor();
