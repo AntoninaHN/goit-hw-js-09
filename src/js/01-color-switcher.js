@@ -20,7 +20,10 @@ refs.stop.addEventListener('click', disableStop);
 function disableStart(e) {
   e.target.setAttribute('disabled', '');
   refs.stop.removeAttribute('disabled');
+  //seting the color immediately for the first time
+  refs.timer = refs.body.style.backgroundColor = getRandomHexColor();
 
+  //color changes every second
   refs.timer = setInterval(() => {
     refs.body.style.backgroundColor = getRandomHexColor();
   }, 1000);

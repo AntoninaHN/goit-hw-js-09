@@ -7,7 +7,7 @@ formBlock.addEventListener('submit', onSubmit);
 function onSubmit(e) {
   e.preventDefault();
   const { delay, step, amount } = e.currentTarget;
-
+  //console.log({ delay, step, amount });
   let currentDelay = Number(delay.value);
   const stepNumber = Number(step.value);
   const amountP = Number(amount.value);
