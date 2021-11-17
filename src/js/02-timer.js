@@ -98,7 +98,6 @@ function timerRun(e) {
   if (deltaTimeMs < 1000) {
     Notify.success('Timer is Over!', {
       clickToClose: true,
-      timeout: 4000,
       position: 'center-center',
     });
     clearInterval(refs.timerId);
