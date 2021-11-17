@@ -64,9 +64,7 @@ const options = {
       refs.btnStart.setAttribute('disabled', '');
       Notify.failure('Please choose a date in the future', {
         clickToClose: true,
-        timeout: 4000,
         position: 'center-center',
-        backOverlay: true,
       });
     }
   },
