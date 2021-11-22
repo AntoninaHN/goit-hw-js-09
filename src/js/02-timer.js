@@ -72,36 +72,36 @@ const options = {
 
 flatpickr(refs.inputDateTimePicker, options);
 
-// refs.btnStart.addEventListener('click', onStart);
+refs.btnStart.addEventListener('click', onStart);
 
-// function onStart(e) {
-//   refs.btnStart.setAttribute('disabled', '');
-//   refs.inputDateTimePicker.setAttribute('disabled', '');
-//   refs.timerId = setInterval(timerRun, 1000);
-// }
+function onStart(e) {
+  refs.btnStart.setAttribute('disabled', '');
+  refs.inputDateTimePicker.setAttribute('disabled', '');
+  refs.timerId = setInterval(timerRun, 1000);
+}
 
-// function timerRun(e) {
-//   refs.dateNowGlobal = new Date();
+function timerRun(e) {
+  refs.dateNowGlobal = new Date();
 
-//   let deltaTimeMs = refs.selectedDate - refs.dateNowGlobal;
-//   console.log(deltaTimeMs);
-//   let deltaTimeMsObj = convertToMs(deltaTimeMs);
+  let deltaTimeMs = refs.selectedDate - refs.dateNowGlobal;
+  //console.log(deltaTimeMs);
+  let deltaTimeMsObj = convertToMs(deltaTimeMs);
 
-//   const { days, hours, minutes, seconds } = deltaTimeMsObj;
+  const { days, hours, minutes, seconds } = deltaTimeMsObj;
 
-//   refs.daysValue.textContent = addLeadingZero(days);
-//   refs.hoursValue.textContent = addLeadingZero(hours);
-//   refs.minutesValue.textContent = addLeadingZero(minutes);
-//   refs.secondsValue.textContent = addLeadingZero(seconds);
+  refs.daysValue.textContent = addLeadingZero(days);
+  refs.hoursValue.textContent = addLeadingZero(hours);
+  refs.minutesValue.textContent = addLeadingZero(minutes);
+  refs.secondsValue.textContent = addLeadingZero(seconds);
 
-//   if (deltaTimeMs < 1000) {
-//     Notify.success('Timer is Over!', {
-//       clickToClose: true,
-//       position: 'center-center',
-//     });
-//     clearInterval(refs.timerId);
-//   }
-// }
+  if (deltaTimeMs < 1000) {
+    Notify.success('Timer is Over!', {
+      clickToClose: true,
+      position: 'center-center',
+    });
+    clearInterval(refs.timerId);
+  }
+}
 
 // //OLEG S.
 // //Описан в документации
@@ -212,10 +212,10 @@ flatpickr(refs.inputDateTimePicker, options);
 //         inputEl = setInterval(b, 1000);
 //       });
 //       function b() {
-//         let deltaTimeMs = selectedDates[0] - new Date();
-//         let deltaTimeMsObj = convertMs(deltaTimeMs);
+// let deltaTimeMs = selectedDates[0] - new Date();
+// let deltaTimeMsObj = convertMs(deltaTimeMs);
 
-//         const { days, hours, minutes, seconds } = convertMs(deltaTimeMs);
+// const { days, hours, minutes, seconds } = convertMs(deltaTimeMs);
 //         document.querySelector('span[data-days]').textContent = days;
 //         document.querySelector('span[data-hours]').textContent = hours;
 //         document.querySelector('span[data-minutes]').textContent = minutes;
@@ -255,4 +255,4 @@ flatpickr(refs.inputDateTimePicker, options);
 // // console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
 // // console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
 
-// flatpickr('input#datetime-picker', options);
+//  flatpickr('input#datetime-picker', options);
