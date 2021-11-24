@@ -1,2 +1,0 @@
-a{text-decoration:none}.container{display:flex;justify-content:space-between;align-items:baseline;flex-basis:calc(25% - 30px);margin-left:30px;margin-right:30px}#datetime-picker,.js-start-btn{padding:10px 20px}.js-start-btn{border:3px;margin-left:10px;background-color:#41aa41;color:#000;flex-basis:calc(25% - 30px);transition:background-color .25s var(--timing-function)}button[disabled]{background-color:#dfdae1}
-/*# sourceMappingURL=/goit-hw-js-09/timer.e8c32b7f.css.map */
